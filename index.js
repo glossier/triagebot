@@ -39,7 +39,7 @@ function handleCommand(payload) {
   let postResults = results => axios.post(response_url, results);
 
   // execute
-  getHistory.then(buildReport).then(postResults).then(console.log(buildReport).catch(console.error);
+  getHistory.then(buildReport).then(postResults).then(console.log(buildReport)).catch(console.error);
 }
 
 // start server
