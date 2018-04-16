@@ -22,6 +22,7 @@ function handleRequest(req, res){
 // Get channel history, build triage report, and respond with results
 function handleCommand(payload) {
   let {channel_id, response_url} = payload;
+  console.log(payload);
   if (!response_url) {
     console.log('got empty response_url in payload');
     return;
@@ -38,7 +39,7 @@ function handleCommand(payload) {
   let postResults = results => axios.post(response_url, results);
 
   // execute
-  getHistory.then(buildReport).then(postResults).catch(console.error);
+  getHistory.then(buildReport).then(postResults).then(console.log(buildReport).catch(console.error);
 }
 
 // start server
